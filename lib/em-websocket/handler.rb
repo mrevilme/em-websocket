@@ -15,7 +15,7 @@ module EventMachine
       def run
         @connection.send_data handshake
         @state = :connected
-        @connection.trigger_on_open
+        @connection.trigger_on_open @request
       end
 
       # Handshake response

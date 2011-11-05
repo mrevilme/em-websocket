@@ -6,6 +6,7 @@ module EventMachine
     module Handshake04
       def handshake
         # Required
+        debug [:request, request]
         unless key = request['sec-websocket-key']
           raise HandshakeError, "Sec-WebSocket-Key header is required"
         end
